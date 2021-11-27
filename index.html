@@ -2,50 +2,57 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<meta name="viewport" 
+		      content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" 
+		      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+			  crossorigin="anonymous">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body style="padding-top: 3.5rem;">
 		<header>
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-				<a class="navbar-brand" href="#" style="color: yellow;">Spotswood Sea Serpents</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<a class="navbar-brand" 
+				   href="#" 
+				   style="color: yellow;">Our Recipes</a>
+
+				<button class="navbar-toggler" 
+				        type="button" 
+						data-toggle="collapse" 
+						data-target="#navbarCollapse" 
+						aria-controls="navbarCollapse" 
+						aria-expanded="false" 
+						aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarCollapse">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="registration.html">Registration</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="swim-buddies.html">Buddies</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="flocking.html">Flocking</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="results.html">Results</a>
-						</li>
-					</ul>
-				</div>
 			</nav>
 		</header>
 		<main role="main" class="container-fluid">
-			<h1>My Dashboard</h1>
 			<div class="card">
 				<div class="card-header">
-					Upcoming Events
+					<span>Easy Apple Crisp</span>
 				</div>
 				<div class="card-body">
-					<ul>
-						<li>Swim Meet @ Salem Fields on July 11th, 2018 at 6:00 PM</li>
-						<li>Swim Meet vs Woodlands on July 18th, 2018 at 6:00 PM</li>
-					</ul>
+					<small>Prep 25 min, Total 1hr 25 min, Servings 6</small>
+
+					<button type="button"
+					        id="js-easy-apple-crisp-details-button">
+						<span id="js-easy-apple-crisp-details-text">Show details</span>
+					</button>
+
+					<div style="display: none;"
+					     id="js-easy-apple-crisp-recipe">
+						<p>Ingredients:</p>
+
+						<p>Steps:</p>
+					</div>
 				</div>
 			</div>
+
 			<div class="card">
 				<div class="card-header">
 					Things I need to do
@@ -60,3 +67,19 @@
 		</main>
 	</body>
 </html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#js-easy-apple-crisp-details-button').on('click', function(){
+			if ($('#js-easy-apple-crisp-details-text').text() === 'Show details') {
+				$('#js-easy-apple-crisp-recipe').slideDown();
+
+				$('#js-easy-apple-crisp-details-text').text('Hide details');
+			} else {
+				$('#js-easy-apple-crisp-recipe').slideUp();
+
+				$('#js-easy-apple-crisp-details-text').text('Show details');
+			}
+		});
+	});
+</script>
